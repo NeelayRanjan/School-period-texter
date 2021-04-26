@@ -15,45 +15,22 @@ def startClass(period):
 
 while True:
     while datetime.now().strftime('%A').lower() == 'monday':
-        time = datetime.now().strftime('%H') + ':' + datetime.now().strftime('%M')
-        if time == monday[0]:
-            startClass(s[0])
-        elif time == monday[1]:
-            startClass(s[1])
-        elif time == monday[2]:
-            startClass(s[2])
-        elif time == monday[3]:
-            startClass(s[3])
-        elif time == monday[4]:
-            startClass(s[4])
-        elif time == monday[5]:
-            startClass(s[5])
-        elif time == monday[6]:
-            startClass(s[6])
-        elif time == monday[7]:
-            startClass(s[7])
+        try:
+            startClass(s[monday.index(datetime.now().strftime('%H') + ':' + datetime.now().strftime('%M'))])
+        except ValueError:
+            pass
         clock.sleep(60)
 
     while datetime.now().strftime('%A').lower() == 'tuesday' or datetime.now().strftime('%A').lower() == 'thursday':
-        time = datetime.now().strftime('%H') + ':' + datetime.now().strftime('%M')
-        if time == regular[0]:
-            startClass(s[0])
-        elif time == regular[1]:
-            startClass(s[1])
-        elif time == regular[2]:
-            startClass(s[2])
-        elif time == regular[3]:
-            startClass(s[3])
+        try:
+            startClass(s[regular.index(datetime.now().strftime('%H') + ':' + datetime.now().strftime('%M'))])
+        except ValueError:
+            pass
         clock.sleep(60)
 
     while datetime.now().strftime('%A').lower() == 'wednesday' or datetime.now().strftime('%A').lower() == 'friday':
-        time = datetime.now().strftime('%H') + ':' + datetime.now().strftime('%M')
-        if time == regular[0]:
-            startClass(s[4])
-        elif time == regular[1]:
-            startClass(s[5])
-        elif time == regular[2]:
-            startClass(s[6])
-        elif time == regular[3]:
-            startClass(s[7])
+        try:
+            startClass(s[regular.index(datetime.now().strftime('%H') + ':' + datetime.now().strftime('%M')) + 4])
+        except ValueError:
+            pass
         clock.sleep(60)
