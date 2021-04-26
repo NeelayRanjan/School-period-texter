@@ -6,11 +6,11 @@ monday = ['07:25', '08:03', '08:40', '09:18', '09:55', '10:33', '11:10', '11:47'
 regular = ['07:25', '08:40', '09:55', '11:10']
 s = ['Digital Electronics', 'Precalculus', 'Honors Blended Chemistry', 'Spanish 3', 'English 2', 'Lunch', 'PE',
      'Principles of Engineering']
-client = Client("AC7f5b6a3b203fea0f76a734accb1e4ab9", "2fb295bcd53ef44549baf79588d4916c")
+client = Client("login", "login")
 
 
 def startClass(period):
-    client.messages.create(to="+17736680069", from_="+12565884422", body=period + " will start soon.")
+    client.messages.create(to="myphonenumber", from_="twilionumber", body=period + " will start soon.")
 
 
 while True:
